@@ -7,7 +7,7 @@ view : Html msg
 view =
     div []
         [ h1 [] [ text "clareLab" ]
-        , img [ src "/images/logo.jpg", alt "clareLab" ] []
+        , img [ src "/images/avatar.jpg", alt "clareLab" ] []
         , p []
             [ i []
                 [ small []

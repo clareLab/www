@@ -3,8 +3,8 @@ module Main exposing (main)
 import Browser
 import Html exposing (Html, div)
 import Html.Attributes exposing (class)
-import Components.Footer
-import Pages.Home
+import Components.Footer as Footer
+import Pages.Home as Home
 
 main : Program () () msg
 main =
@@ -12,7 +12,7 @@ main =
 
 view : () -> Html msg
 view _ =
-    div [ class "p-6 space-y-6 pb-24" ]
-        [ Pages.Home.view
-        , Components.Footer.view
+    div []
+        [ div [ class "min-h-screen p-6 space-y-6" ] [ Home.view ]
+        , Footer.view
         ]
