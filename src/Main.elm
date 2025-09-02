@@ -1,8 +1,8 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html, a, br, div, h1, h2, i, img, li, p, small, text, ul)
-import Html.Attributes exposing (alt, href, src)
+import Html exposing (Html, a, br, div, h1, h2, i, img, li, p, small, text, ul, footer)
+import Html.Attributes exposing (alt, href, src, class)
 
 
 main : Program () () msg
@@ -38,8 +38,7 @@ view _ =
             , li [] [ text "I own a server and know a bit of programming." ]
             ]
         , h2 [] [ text "Education" ]
-        , ul []
-            [ li [] [ text "Bachelor of Computer Science, University of Trento, 2024-2027" ] ]
+        , ul [] [ li [] [ text "Bachelor of Computer Science, University of Trento, 2024-2027" ] ]
         , h2 [] [ text "Internal Links" ]
         , ul []
             [ li [] [ a [ href "https://mofufu.moe" ] [ text "Mofufu" ] ]
@@ -57,11 +56,16 @@ view _ =
             , li [] [ a [ href "https://x.com/c1areLab" ] [ text "X" ] ]
             , li [] [ a [ href "https://www.youtube.com/@clareLa6" ] [ text "YouTube" ] ]
             ]
-        , h2 [] [ text "Contacts" ]
-        , ul []
-            [ li [] [ a [ href "https://keybase.io/clarela6" ] [ text "Keybase" ] ]
-            , li [] [ a [ href "mailto:yaho@clarelab.moe" ] [ text "yaho@clarelab.moe" ] ]
+        , footer [ class "flex justify-between items-center mt-8 border-t pt-4" ]
+            [ div []
+                [ h2 [] [ text "Contacts" ]
+                , ul []
+                    [ li [] [ a [ href "https://keybase.io/clarela6" ] [ text "Keybase" ] ]
+                    , li [] [ a [ href "mailto:yaho@clarelab.moe" ] [ text "yaho@clarelab.moe" ] ]
+                    ]
+                ]
+            , div []
+                [ img [ src "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=2&pixelated=1&darkmode=0", alt "Moe Counter" ] []
+                ]
             ]
-        , h2 [] [ text "Unique Visitor Counter" ]
-        , img [ src "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=2&pixelated=1&darkmode=0", alt "Moe Counter" ] []
         ]
