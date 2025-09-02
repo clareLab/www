@@ -56,7 +56,7 @@ view _ =
             , li [] [ a [ href "https://x.com/c1areLab" ] [ text "X" ] ]
             , li [] [ a [ href "https://www.youtube.com/@clareLa6" ] [ text "YouTube" ] ]
             ]
-        , footer [ class "flex justify-between items-center mt-8 border-t pt-4" ]
+        , footer [ class "flex bottom-0 left-0 right-0 bg-white border-t p-4 flex justify-between items-center text-sm" ]
             [ div []
                 [ h2 [] [ text "Contacts" ]
                 , ul []
