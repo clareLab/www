@@ -1,26 +1,16 @@
 name: ci
-
 on:
   push:
     branches: [ main ]
-
 jobs:
-  nixyll:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install
-        uses: cachix/install-nix-action@v31
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          nix_path: nixpkgs=channel:nixos-unstable
-
-      - name: Build
-        run: |
-          nix-build site.nix
-
-      - name: Deploy
-        run: |
-          sudo rm -rf /srv/clarelab/www/*
-          cp -r result/* /srv/clarelab/www/
+          node-version: 20
+      - run: corepack enable && corepack prepare pnpm@8.15.5 --activate
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: rsync -a --delete dist/ /srv/clarelab/www/
