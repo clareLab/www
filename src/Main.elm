@@ -8,11 +8,14 @@ import Pages.Home as Home
 
 main : Program () () msg
 main =
-    Browser.sandbox { init = (), update = \_ m -> m, view = view }
+    Browser.sandbox { init = ()
+                    , update = \_ m -> m
+                    , view = view }
 
 view : () -> Html msg
 view _ =
     div []
-        [ div [ class "min-h-screen p-6 space-y-6" ] [ Home.view ]
+        [ div [ class "" ]
+              [ Home.view ]
         , Footer.view
         ]
