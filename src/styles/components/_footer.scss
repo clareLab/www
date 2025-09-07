@@ -67,9 +67,8 @@
   white-space: nowrap;
   line-height: 1;
   --chars: 14;
-  font-size: min(calc(100cqw / var(--chars)), 40cqh);
+  font-size: 36cqh;
 }
-
 
 .counter {
   display: none;
