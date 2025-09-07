@@ -2,77 +2,67 @@ module Components.Footer exposing (view)
 
 import Html exposing (Html, a, div, li, node, span, text, ul)
 import Html.Attributes exposing (attribute, class, href)
+import String exposing (fromFloat, fromInt, replace)
+
+
+maxScale : Float
+maxScale =
+    2
+
+
+steps : Int
+steps =
+    8
+
+
+scales : List Float
+scales =
+    List.map (\k -> toFloat k * (maxScale / toFloat steps))
+        (List.reverse (List.range 1 steps))
+
+
+suffix : Float -> String
+suffix s =
+    "s" ++ replace "." "_" (fromFloat s)
+
+
+wOf : Float -> Int
+wOf s =
+    round (360 * s)
+
+
+hOf : Float -> Int
+hOf s =
+    round (100 * s)
+
+
+urlOf : Float -> String
+urlOf s =
+    "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale="
+        ++ fromFloat s
+        ++ "&pixelated=1&darkmode=0"
+
+
+iframeOf : Float -> Html msg
+iframeOf s =
+    node "iframe"
+        [ attribute "src" (urlOf s)
+        , attribute "class" ("counter counter--" ++ suffix s)
+        , attribute "width" (fromInt (wOf s))
+        , attribute "height" (fromInt (hOf s))
+        ]
+        []
 
 
 view : Html msg
 view =
     div [ class "footer" ]
-        [ div [ class "footer__left" ]
-            [ span [] [ text "CONTACTS" ] ]
+        [ div [ class "footer__left" ] [ span [] [ text "CONTACTS" ] ]
         , div [ class "footer__center" ]
             [ ul []
-                [ li []
-                    [ a [ href "https://keybase.io/clarela6" ] [ text "Keybase" ] ]
-                , li []
-                    [ a [ href "mailto:yaho@clarelab.moe" ] [ text "yaho@clarelab.moe" ] ]
+                [ li [] [ a [ href "https://keybase.io/clarela6" ] [ text "Keybase" ] ]
+                , li [] [ a [ href "mailto:yaho@clarelab.moe" ] [ text "yaho@clarelab.moe" ] ]
                 ]
             ]
-        , div [ class "footer__right" ]
-            [ node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=2&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s2"
-                , attribute "width" "720"
-                , attribute "height" "200"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.75&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s1_75"
-                , attribute "width" "630"
-                , attribute "height" "175"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.5&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s1_5"
-                , attribute "width" "540"
-                , attribute "height" "150"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.25&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s1_25"
-                , attribute "width" "450"
-                , attribute "height" "125"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s1"
-                , attribute "width" "360"
-                , attribute "height" "100"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.75&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s0_75"
-                , attribute "width" "270"
-                , attribute "height" "75"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.5&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s0_5"
-                , attribute "width" "180"
-                , attribute "height" "50"
-                ]
-                []
-            , node "iframe"
-                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.25&pixelated=1&darkmode=0"
-                , attribute "class" "counter counter--s0_25"
-                , attribute "width" "90"
-                , attribute "height" "25"
-                ]
-                []
-            ]
+        , div [ class "footer__right" ] (List.map iframeOf scales)
         ]
