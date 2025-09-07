@@ -12,7 +12,7 @@ maxScale =
 
 steps : Int
 steps =
-    8
+    16
 
 
 scales : List Float

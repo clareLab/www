@@ -3,7 +3,7 @@
 @use "sass:string";
 
 $max-scale: 2;
-$steps: 8;
+$steps: 16;
 $row-min-scale: 1.5;
 
 @function _rightw($s) { @return 360 * $s; }
