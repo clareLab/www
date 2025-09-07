@@ -1,0 +1,43 @@
+.footer { margin:0; padding:0; border:0; display:grid; }
+.footer__left, .footer__center, .footer__right { margin:0; padding:0; border:0; }
+.counter { display:none; border:0; }
+
+@media (min-width:1440px) {
+  .footer { grid-template-columns: 66.67px 1fr 720px; grid-template-areas: "left center right"; align-items: stretch; height:200px; width:100%; }
+  .footer__left { grid-area:left; width:66.67px; height:200px; }
+  .footer__center { grid-area:center; height:200px; }
+  .footer__right { grid-area:right; width:720px; height:200px; }
+  .counter--s2 { display:block; }
+}
+
+@media (min-width:1080px) and (max-width:1439.98px) {
+  .footer { grid-template-columns: 50px 1fr 540px; grid-template-areas: "left center right"; align-items: stretch; height:150px; width:100%; }
+  .footer__left { grid-area:left; width:50px; height:150px; }
+  .footer__center { grid-area:center; height:150px; }
+  .footer__right { grid-area:right; width:540px; height:150px; }
+  .counter--s1_5 { display:block; }
+}
+
+@media (min-width:720px) and (max-width:1079.98px) {
+  .footer { width:720px; margin-left:auto; margin-right:auto; grid-template-columns: 1fr 1fr; grid-template-areas: "left center" "right right"; }
+  .footer__left { grid-area:left; height:200px; }
+  .footer__center { grid-area:center; height:200px; }
+  .footer__right { grid-area:right; width:720px; height:200px; }
+  .counter--s2 { display:block; }
+}
+
+@media (min-width:540px) and (max-width:719.98px) {
+  .footer { width:540px; margin-left:auto; margin-right:auto; grid-template-columns: 1fr 1fr; grid-template-areas: "left center" "right right"; }
+  .footer__left { grid-area:left; height:150px; }
+  .footer__center { grid-area:center; height:150px; }
+  .footer__right { grid-area:right; width:540px; height:150px; }
+  .counter--s1_5 { display:block; }
+}
+
+@media (max-width:539.98px) {
+  .footer { width:360px; margin-left:auto; margin-right:auto; grid-template-columns: 1fr 1fr; grid-template-areas: "left center" "right right"; }
+  .footer__left { grid-area:left; height:100px; }
+  .footer__center { grid-area:center; height:100px; }
+  .footer__right { grid-area:right; width:360px; height:100px; }
+  .counter--s1 { display:block; }
+}
