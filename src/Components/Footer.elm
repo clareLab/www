@@ -39,5 +39,12 @@ view =
                 , attribute "height" "100"
                 ]
                 []
+            , node "iframe"
+                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.5&pixelated=1&darkmode=0"
+                , attribute "class" "counter counter--s0.5"
+                , attribute "width" "180"
+                , attribute "height" "50"
+                ]
+                []
             ]
         ]
