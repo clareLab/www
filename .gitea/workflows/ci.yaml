@@ -6,13 +6,11 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@main
+      - uses: actions/setup-bun@main
         with:
-          node-version: 20
-      - run: corepack enable && corepack prepare pnpm@8.15.5 --activate
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
-      - run: |
-          sudo rm -rf /srv/clarelab/www/*
-          cp -r dist/* /srv/clarelab/www/
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - run: sudo rm -rf /srv/clarelab/www/*
+      - run: cp -r dist/* /srv/clarelab/www/

@@ -1,17 +1,17 @@
 services:
   www:
-    image: node:20-bookworm
+    image: oven/bun:latest
     container_name: vps-clarelab-www
     working_dir: /workspace
     ports:
-      - "8080:8080"
+      - "8888:8080"
     volumes:
       - "..:/workspace"
     command: >
       bash -lc "
-        corepack enable &&
-        corepack prepare pnpm@8.15.5 --activate &&
-        pnpm install &&
-        npx elm install elm/json &&
-        pnpm dev --host 0.0.0.0 --port 8080
+        apt-get update &&
+        apt-get install -y ca-certificates &&
+        bun install &&
+        bun run build &&
+        tail -f /dev/null
       "

@@ -1,15 +1,15 @@
 {
-  "dockerComposeFile": "compose.yaml",
-  "service": "www",
-  "workspaceFolder": "/workspace",
-  "shutdownAction": "stopCompose",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "elmtooling.elm-ls-vscode",
-        "mrmlnc.vscode-scss",
-        "sibiraj-s.vscode-scss-formatter"
-      ]
-    }
-  }
+	"dockerComposeFile": "compose.yaml",
+	"service": "www",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"elmtooling.elm-ls-vscode",
+				"mrmlnc.vscode-scss",
+				"sibiraj-s.vscode-scss-formatter"
+			]
+		}
+	}
 }

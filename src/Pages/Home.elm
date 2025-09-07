@@ -3,6 +3,7 @@ module Pages.Home exposing (view)
 import Html exposing (Html, a, br, div, h1, h2, i, img, li, p, small, text, ul)
 import Html.Attributes exposing (alt, href, src)
 
+
 view : Html msg
 view =
     div []

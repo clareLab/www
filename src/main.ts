@@ -1,3 +1,4 @@
-import { Elm } from "./Main.elm"
+import "./styles/main.scss";
+import { Elm } from "./Main.elm";
 
-Elm.Main.init({ node: document.getElementById("app") })
+Elm.Main.init({ node: document.getElementById("app") });
