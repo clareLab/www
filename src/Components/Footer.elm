@@ -26,10 +26,24 @@ view =
                 ]
                 []
             , node "iframe"
+                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.75&pixelated=1&darkmode=0"
+                , attribute "class" "counter counter--s1_75"
+                , attribute "width" "630"
+                , attribute "height" "175"
+                ]
+                []
+            , node "iframe"
                 [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.5&pixelated=1&darkmode=0"
                 , attribute "class" "counter counter--s1_5"
                 , attribute "width" "540"
                 , attribute "height" "150"
+                ]
+                []
+            , node "iframe"
+                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=1.25&pixelated=1&darkmode=0"
+                , attribute "class" "counter counter--s1_25"
+                , attribute "width" "450"
+                , attribute "height" "125"
                 ]
                 []
             , node "iframe"
@@ -40,10 +54,24 @@ view =
                 ]
                 []
             , node "iframe"
+                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.75&pixelated=1&darkmode=0"
+                , attribute "class" "counter counter--s0_75"
+                , attribute "width" "270"
+                , attribute "height" "75"
+                ]
+                []
+            , node "iframe"
                 [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.5&pixelated=1&darkmode=0"
                 , attribute "class" "counter counter--s0_5"
                 , attribute "width" "180"
                 , attribute "height" "50"
+                ]
+                []
+            , node "iframe"
+                [ attribute "src" "https://counter.clarelab.moe/@www?name=www&theme=rule34&padding=8&offset=0&align=center&scale=0.25&pixelated=1&darkmode=0"
+                , attribute "class" "counter counter--s0_25"
+                , attribute "width" "90"
+                , attribute "height" "25"
                 ]
                 []
             ]
