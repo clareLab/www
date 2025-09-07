@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: actions/setup-bun@main
+      - uses: oven-sh/setup-bun@main
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
